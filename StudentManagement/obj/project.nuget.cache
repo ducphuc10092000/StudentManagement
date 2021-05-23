@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "OAxFWR4Rpk1W+mqwXSnKDSJR8KmydIM1kmBqFQT4JiEFNP3ysIiPkGqY4JaGzeYBrqg6Bv4jo8XD0AMJtuVOnA==",
+  "success": true,
+  "projectFilePath": "D:\\StudentManagement\\StudentManagement\\StudentManagement.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ADMIN\\.nuget\\packages\\materialdesigncolors\\2.0.0\\materialdesigncolors.2.0.0.nupkg.sha512",
+    "C:\\Users\\ADMIN\\.nuget\\packages\\materialdesignthemes\\4.0.0\\materialdesignthemes.4.0.0.nupkg.sha512",
+    "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\ADMIN\\.nuget\\packages\\system.drawing.common\\5.0.2\\system.drawing.common.5.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

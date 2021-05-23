@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="4.0.0" />
+    <PackageReference Include="System.Drawing.Common" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="View\Mark_Manage\" />
+    <Folder Include="View\Tuition_Manage\" />
+    <Folder Include="View\Teacher_Manage\" />
+    <Folder Include="View\Class_Manage\" />
+    <Folder Include="View\Room_Manage\" />
+  </ItemGroup>
+
+</Project>
