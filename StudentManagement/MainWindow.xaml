@@ -7,11 +7,16 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:viewDashBoard="clr-namespace:StudentManagement.View.DashBoard"
         xmlns:viewStudent="clr-namespace:StudentManagement.View.Student_Manage"
+        xmlns:viewTeacher="clr-namespace:StudentManagement.View.Teacher_Manage"
+        xmlns:viewClass="clr-namespace:StudentManagement.View.Class_Manage"
+        xmlns:viewRoom="clr-namespace:StudentManagement.View.Room_Manage"
+        xmlns:viewMark="clr-namespace:StudentManagement.View.Mark_Manage"
+        xmlns:viewTuition="clr-namespace:StudentManagement.View.Tuition_Manage"
         mc:Ignorable="d"
         WindowStyle="None"
         ResizeMode="NoResize"
-        x:Name="MainWD"
         WindowStartupLocation="CenterScreen"
+        x:Name="MainWD"
         DataContext="{StaticResource MainVM}"
         Title="MainWindow"
         Height="900"
@@ -66,6 +71,19 @@
                                              PlacementMode="BottomAndAlignRightEdges">
                         <ListBox>
                             <ListBoxItem Margin="0,0,0,0">
+                                <Button Style="{DynamicResource MaterialDesignRaisedButton}"
+                                        Command="{Binding LogOutCommand}"
+                                        CommandParameter="{Binding ElementName=MainWD}"
+                                        Height="50"
+                                        Width="150"
+                                        Background="#FF81D4FA"
+                                        Content="LogOut"
+                                        ToolTip="Resource name: MaterialDesignRaisedAccentButton"
+                                        materialDesign:RippleAssist.Feedback="#FF0EAEC7">
+                                </Button>
+                            </ListBoxItem>
+
+                            <ListBoxItem Margin="0,0,0,0">
                                 <Button Command="{Binding QuitCommand}"
                                         Style="{DynamicResource MaterialDesignRaisedButton}"
                                         Height="50"
@@ -74,19 +92,11 @@
                                         materialDesign:RippleAssist.Feedback="#FF0EAEC7"
                                         Background="#FF81D4FA"
                                         CommandParameter="{Binding ElementName=MainWD}">
-                                    Quit
+                                    <TextBlock Text="Quit">
+                                    </TextBlock>
                                 </Button>
                             </ListBoxItem>
-                            <ListBoxItem Margin="0,0,0,0">
-                                <Button Style="{DynamicResource MaterialDesignRaisedButton}"
-                                        Height="50"
-                                        Width="150"
-                                        Background="#FF81D4FA"
-                                        ToolTip="Resource name: MaterialDesignRaisedAccentButton"
-                                        materialDesign:RippleAssist.Feedback="#FF0EAEC7">
-                                    Help
-                                </Button>
-                            </ListBoxItem>
+
                             <ListBoxItem>
                                 <Button Style="{DynamicResource MaterialDesignRaisedButton}"
                                         Height="50"
@@ -94,7 +104,6 @@
                                         Background="#FF81D4FA"
                                         ToolTip="Resource name: MaterialDesignRaisedAccentButton"
                                         materialDesign:RippleAssist.Feedback="#FF0EAEC7">
-                                    About us
                                 </Button>
                             </ListBoxItem>
                         </ListBox>
@@ -104,7 +113,8 @@
                         <TextBlock VerticalAlignment="Center"
                                    Height="auto"
                                    Style="{StaticResource tblButtonFeature}"
-                                   FontSize="25"> STUDENT MANAGEMENT
+                                   FontSize="25"
+                                   Text=" STUDENT MANAGEMENT">
                         </TextBlock>
                     </StackPanel>
                 </DockPanel>
@@ -126,18 +136,17 @@
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
+
                 </Grid.RowDefinitions>
                 <!--BUTTON 1 - DASHBOARD-->
                 <Border Grid.Row="0"
                         BorderBrush="Black"
                         BorderThickness="1">
                     <Grid>
-                        <Button Style="{StaticResource MaterialDesignRaisedLightButton}"
-                                Width="100"
+                        <Button Width="100"
                                 Height="100"
                                 Command="{Binding BtnDashBoardCommand}"
-                                ToolTip="Resource name: MaterialDesignRaisedLightButton"
-                                FontSize="10">
+                                ToolTip="Resource name: MaterialDesignRaisedLightButton">
                             <Grid Height="auto"
                                   Width="auto">
                                 <Grid.RowDefinitions>
@@ -151,22 +160,38 @@
                                 <!--Content-->
                                 <TextBlock Grid.Row="1"
                                            Text="DASHBOARD"
-                                           FontSize="13"
+                                           FontSize="15"
                                            VerticalAlignment="Center"
-                                           HorizontalAlignment="Center"
-                                           Style="{StaticResource tblButtonFeature}">
-                                </TextBlock>
+                                           Style="{StaticResource tblButtonFeature}"
+                                           Margin="-3,0,-3,0" />
                             </Grid>
+                            <Button.Style>
+                                <Style TargetType="Button"
+                                       BasedOn="{StaticResource MaterialDesignRaisedButton}">
+                                    <Setter Property="BorderThickness"
+                                            Value="0"></Setter>
+                                    <Setter Property="FontWeight"
+                                            Value="Normal"></Setter>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ChucNang}"
+                                                     Value="0">
+                                            <Setter Property="FontWeight"
+                                                    Value="Bold"></Setter>
+                                            <Setter Property="Background"
+                                                    Value="#FF216B87"></Setter>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
                         </Button>
                     </Grid>
                 </Border>
                 <Border Grid.Row="1"
                         BorderBrush="Black"
                         BorderThickness="1">
-                    <Button Style="{StaticResource MaterialDesignRaisedLightButton}"
-                            Width="100"
+                    <Button Width="100"
                             Height="100"
-                            Command="{Binding BtnStudentCommand}"
+                            Command="{Binding BtnManageStudentCommand}"
                             FontSize="10">
                         <Grid Height="auto"
                               Width="auto">
@@ -180,21 +205,39 @@
                             </Image>
                             <!--Content-->
                             <TextBlock Grid.Row="1"
-                                       Text="STUDENT"
+                                       Text="HỌC SINH"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center"
                                        Style="{StaticResource tblButtonFeature}">
                             </TextBlock>
                         </Grid>
+                        <Button.Style>
+                            <Style TargetType="Button"
+                                   BasedOn="{StaticResource MaterialDesignRaisedButton}">
+                                <Setter Property="BorderThickness"
+                                        Value="0"></Setter>
+                                <Setter Property="FontWeight"
+                                        Value="Normal"></Setter>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ChucNang}"
+                                                 Value="1">
+                                        <Setter Property="FontWeight"
+                                                Value="Bold"></Setter>
+                                        <Setter Property="Background"
+                                                Value="#FF216B87"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
                     </Button>
                 </Border>
                 <Border Grid.Row="2"
                         BorderBrush="Black"
                         BorderThickness="1">
-                    <Button Style="{StaticResource MaterialDesignRaisedLightButton}"
-                            Width="100"
+                    <Button Width="100"
                             Height="100"
-                            FontSize="10">
+                            FontSize="10"
+                            Command="{Binding BtnManageTeacherCommand}">
                         <Grid Height="auto"
                               Width="auto">
                             <Grid.RowDefinitions>
@@ -207,21 +250,38 @@
                             </Image>
                             <!--Content-->
                             <TextBlock Grid.Row="1"
-                                       Text="TEACHER"
+                                       Text="GIÁO VIÊN"
                                        VerticalAlignment="Center"
-                                       HorizontalAlignment="Center"
-                                       Style="{StaticResource tblButtonFeature}">
-                            </TextBlock>
+                                       Style="{StaticResource tblButtonFeature}"
+                                       Margin="-3,0" />
                         </Grid>
+                        <Button.Style>
+                            <Style TargetType="Button"
+                                   BasedOn="{StaticResource MaterialDesignRaisedButton}">
+                                <Setter Property="BorderThickness"
+                                        Value="0"></Setter>
+                                <Setter Property="FontWeight"
+                                        Value="Normal"></Setter>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ChucNang}"
+                                                 Value="2">
+                                        <Setter Property="FontWeight"
+                                                Value="Bold"></Setter>
+                                        <Setter Property="Background"
+                                                Value="#FF5D6BF9"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
                     </Button>
                 </Border>
                 <Border Grid.Row="3"
                         BorderBrush="Black"
                         BorderThickness="1">
-                    <Button Style="{StaticResource MaterialDesignRaisedLightButton}"
-                            Width="100"
+                    <Button Width="100"
                             Height="100"
-                            FontSize="10">
+                            FontSize="10"
+                            Command="{Binding BtnManageClassCommand}">
                         <Grid Height="auto"
                               Width="auto">
                             <Grid.RowDefinitions>
@@ -234,21 +294,39 @@
                             </Image>
                             <!--Content-->
                             <TextBlock Grid.Row="1"
-                                       Text="CLASS"
+                                       Text="LỚP"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center"
                                        Style="{StaticResource tblButtonFeature}">
                             </TextBlock>
                         </Grid>
+                        <Button.Style>
+                            <Style TargetType="Button"
+                                   BasedOn="{StaticResource MaterialDesignRaisedButton}">
+                                <Setter Property="BorderThickness"
+                                        Value="0"></Setter>
+                                <Setter Property="FontWeight"
+                                        Value="Normal"></Setter>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ChucNang}"
+                                                 Value="3">
+                                        <Setter Property="FontWeight"
+                                                Value="Bold"></Setter>
+                                        <Setter Property="Background"
+                                                Value="#FF5D6BF9"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
                     </Button>
                 </Border>
                 <Border Grid.Row="4"
                         BorderBrush="Black"
                         BorderThickness="1">
-                    <Button Style="{StaticResource MaterialDesignRaisedLightButton}"
-                            Width="100"
+                    <Button Width="100"
                             Height="100"
-                            FontSize="10">
+                            FontSize="10"
+                            Command="{Binding BtnManageRoomCommand}">
                         <Grid Height="auto"
                               Width="auto">
                             <Grid.RowDefinitions>
@@ -261,21 +339,40 @@
                             </Image>
                             <!--Content-->
                             <TextBlock Grid.Row="1"
-                                       Text="ROOM"
+                                       Text="LỊCH DẠY"
                                        VerticalAlignment="Center"
-                                       HorizontalAlignment="Center"
-                                       Style="{StaticResource tblButtonFeature}">
+                                       HorizontalAlignment="Left"
+                                       Style="{StaticResource tblButtonFeature}"
+                                       Margin="-16,0">
                             </TextBlock>
                         </Grid>
+                        <Button.Style>
+                            <Style TargetType="Button"
+                                   BasedOn="{StaticResource MaterialDesignRaisedButton}">
+                                <Setter Property="BorderThickness"
+                                        Value="0"></Setter>
+                                <Setter Property="FontWeight"
+                                        Value="Normal"></Setter>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ChucNang}"
+                                                 Value="4">
+                                        <Setter Property="FontWeight"
+                                                Value="Bold"></Setter>
+                                        <Setter Property="Background"
+                                                Value="#FF5D6BF9"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
                     </Button>
                 </Border>
                 <Border Grid.Row="5"
                         BorderBrush="Black"
                         BorderThickness="1">
-                    <Button Style="{StaticResource MaterialDesignRaisedLightButton}"
-                            Width="100"
+                    <Button Width="100"
                             Height="100"
-                            FontSize="10">
+                            FontSize="10"
+                            Command="{Binding BtnManageMarkCommand}">
                         <Grid Height="auto"
                               Width="auto">
                             <Grid.RowDefinitions>
@@ -288,21 +385,39 @@
                             </Image>
                             <!--Content-->
                             <TextBlock Grid.Row="1"
-                                       Text="MARK"
+                                       Text="QL ĐIỂM"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center"
                                        Style="{StaticResource tblButtonFeature}">
                             </TextBlock>
                         </Grid>
+                        <Button.Style>
+                            <Style TargetType="Button"
+                                   BasedOn="{StaticResource MaterialDesignRaisedButton}">
+                                <Setter Property="BorderThickness"
+                                        Value="0"></Setter>
+                                <Setter Property="FontWeight"
+                                        Value="Normal"></Setter>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ChucNang}"
+                                                 Value="5">
+                                        <Setter Property="FontWeight"
+                                                Value="Bold"></Setter>
+                                        <Setter Property="Background"
+                                                Value="#FF5D6BF9"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
                     </Button>
                 </Border>
                 <Border Grid.Row="6"
                         BorderBrush="Black"
                         BorderThickness="1">
-                    <Button Style="{StaticResource MaterialDesignRaisedLightButton}"
-                            Width="100"
+                    <Button Width="100"
                             Height="100"
-                            FontSize="10">
+                            FontSize="10"
+                            Command="{Binding BtnManageFeeCommand}">
                         <Grid Height="auto"
                               Width="auto">
                             <Grid.RowDefinitions>
@@ -315,12 +430,31 @@
                             </Image>
                             <!--Content-->
                             <TextBlock Grid.Row="1"
-                                       Text="FEE"
+                                       Text="QL HỌC PHÍ"
                                        VerticalAlignment="Center"
-                                       HorizontalAlignment="Center"
-                                       Style="{StaticResource tblButtonFeature}">
+                                       HorizontalAlignment="Left"
+                                       Style="{StaticResource tblButtonFeature}"
+                                       Margin="-7,0">
                             </TextBlock>
                         </Grid>
+                        <Button.Style>
+                            <Style TargetType="Button"
+                                   BasedOn="{StaticResource MaterialDesignRaisedButton}">
+                                <Setter Property="BorderThickness"
+                                        Value="0"></Setter>
+                                <Setter Property="FontWeight"
+                                        Value="Normal"></Setter>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ChucNang}"
+                                                 Value="6">
+                                        <Setter Property="FontWeight"
+                                                Value="Bold"></Setter>
+                                        <Setter Property="Background"
+                                                Value="#FF5D6BF9"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
                     </Button>
                 </Border>
                 <Border Grid.Row="7"
@@ -342,10 +476,11 @@
                             </Image>
                             <!--Content-->
                             <TextBlock Grid.Row="1"
-                                       Text="..."
+                                       Text="TÀI KHOẢN"
                                        VerticalAlignment="Center"
-                                       HorizontalAlignment="Center"
-                                       Style="{StaticResource tblButtonFeature}">
+                                       HorizontalAlignment="Left"
+                                       Style="{StaticResource tblButtonFeature}"
+                                       Margin="-3,0">
                             </TextBlock>
                         </Grid>
                     </Button>
@@ -386,8 +521,92 @@
                     </Grid.Style>
                     <viewStudent:UC_Student_Manage></viewStudent:UC_Student_Manage>
                 </Grid>
+                <!--View Teacher-->
+                <Grid>
+                    <Grid.Style>
+                        <Style TargetType="Grid">
+                            <Setter Property="Visibility"
+                                    Value="Collapsed"></Setter>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ChucNang}"
+                                             Value="2">
+                                    <Setter Property="Visibility"
+                                            Value="Visible"></Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Style>
+                    <viewTeacher:UC_Teacher></viewTeacher:UC_Teacher>
+                </Grid>
+                <!--View Class-->
+                <Grid>
+                    <Grid.Style>
+                        <Style TargetType="Grid">
+                            <Setter Property="Visibility"
+                                    Value="Collapsed"></Setter>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ChucNang}"
+                                             Value="3">
+                                    <Setter Property="Visibility"
+                                            Value="Visible"></Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Style>
+                    <viewClass:UC_Class></viewClass:UC_Class>
+                </Grid>
+                <!--View Room-->
+                <Grid>
+                    <Grid.Style>
+                        <Style TargetType="Grid">
+                            <Setter Property="Visibility"
+                                    Value="Collapsed"></Setter>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ChucNang}"
+                                             Value="4">
+                                    <Setter Property="Visibility"
+                                            Value="Visible"></Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Style>
+                    <viewRoom:UC_Room></viewRoom:UC_Room>
+                </Grid>
+                <!--View Mark-->
+                <Grid>
+                    <Grid.Style>
+                        <Style TargetType="Grid">
+                            <Setter Property="Visibility"
+                                    Value="Collapsed"></Setter>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ChucNang}"
+                                             Value="5">
+                                    <Setter Property="Visibility"
+                                            Value="Visible"></Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Style>
+                    <viewMark:UC_Mark></viewMark:UC_Mark>
+                </Grid>
+                <!--View Tuition-->
+                <Grid>
+                    <Grid.Style>
+                        <Style TargetType="Grid">
+                            <Setter Property="Visibility"
+                                    Value="Collapsed"></Setter>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ChucNang}"
+                                             Value="6">
+                                    <Setter Property="Visibility"
+                                            Value="Visible"></Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Style>
+                    <viewTuition:UC_Tuition></viewTuition:UC_Tuition>
+                </Grid>
             </Grid>
-
         </Grid>
     </Grid>
 </Window>

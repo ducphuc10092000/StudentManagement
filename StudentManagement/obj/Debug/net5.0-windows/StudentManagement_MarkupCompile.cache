@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 D:\StudentManagement\StudentManagement\App.xaml
-41524188556
+91870577616
 
-9-623881258
-1962144237593
-MainWindow.xaml;ResourceXAML\MainResource.xaml;View\DashBoard\UC_DashBoard.xaml;View\Student_Manage\UC_Student_Manage.xaml;
+141374033564
+197-292183261
+MainWindow.xaml;ResourceXAML\MainResource.xaml;View\Class_Manage\UC_Class.xaml;View\DashBoard\UC_DashBoard.xaml;View\Mark_Manage\UC_Mark.xaml;View\Room_Manage\UC_Room.xaml;View\Student_Manage\UC_Student_Manage.xaml;View\Teacher_Manage\UC_Teacher.xaml;View\Tuition_Manage\UC_Tuition.xaml;
 
 False
 

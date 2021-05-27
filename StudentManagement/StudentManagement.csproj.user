@@ -7,10 +7,25 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="View\Class_Manage\UC_Class.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\DashBoard\UC_DashBoard.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\Mark_Manage\UC_Mark.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Room_Manage\UC_Room.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\Student_Manage\UC_Student_Manage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Teacher_Manage\UC_Teacher.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Tuition_Manage\UC_Tuition.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -21,10 +36,25 @@
     <Page Update="ResourceXAML\MainResource.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\Class_Manage\UC_Class.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\DashBoard\UC_DashBoard.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\Mark_Manage\UC_Mark.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Room_Manage\UC_Room.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\Student_Manage\UC_Student_Manage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Teacher_Manage\UC_Teacher.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Tuition_Manage\UC_Tuition.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

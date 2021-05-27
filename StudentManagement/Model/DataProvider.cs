@@ -23,11 +23,11 @@ namespace StudentManagement.Model
             }
         }
 
-        //public TOURMANAGEMENTEntities DB { get; set; }
-        //private DataProvider()
-        //{
-        //    DB = new TOURMANAGEMENTEntities();
+        public STUDENTMANAGEMENTEntities DB { get; set; }
+        private DataProvider()
+        {
+            DB = new STUDENTMANAGEMENTEntities();
 
-        //}
+        }
     }
 }

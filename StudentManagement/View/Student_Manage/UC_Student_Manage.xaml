@@ -10,7 +10,7 @@
     <Grid>
         <TextBlock VerticalAlignment="Center"
                    HorizontalAlignment="Center"
-                   FontSize="50">
+                   FontSize="100">
             MANAGE STUDENT
         </TextBlock>
     </Grid>

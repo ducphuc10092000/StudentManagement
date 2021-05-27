@@ -1,7 +1,12 @@
-﻿
+﻿D:\StudentManagement\StudentManagement\obj\Debug\net5.0-windows\GeneratedInternalTypeHelper.g.cs
 FD:\StudentManagement\StudentManagement\App.xaml;;
 FD:\StudentManagement\StudentManagement\MainWindow.xaml;;
 FD:\StudentManagement\StudentManagement\ResourceXAML\MainResource.xaml;;
+FD:\StudentManagement\StudentManagement\View\Class_Manage\UC_Class.xaml;;
 FD:\StudentManagement\StudentManagement\View\DashBoard\UC_DashBoard.xaml;;
+FD:\StudentManagement\StudentManagement\View\Mark_Manage\UC_Mark.xaml;;
+FD:\StudentManagement\StudentManagement\View\Room_Manage\UC_Room.xaml;;
 FD:\StudentManagement\StudentManagement\View\Student_Manage\UC_Student_Manage.xaml;;
+FD:\StudentManagement\StudentManagement\View\Teacher_Manage\UC_Teacher.xaml;;
+FD:\StudentManagement\StudentManagement\View\Tuition_Manage\UC_Tuition.xaml;;
 

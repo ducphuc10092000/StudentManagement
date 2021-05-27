@@ -23,8 +23,14 @@ namespace StudentManagement.ViewModel
         public ICommand QuitCommand { get; set; }
 
         public ICommand BtnDashBoardCommand { get; set; }
-        public ICommand BtnStudentCommand { get; set; }
-        
+        public ICommand BtnManageStudentCommand { get; set; }
+        public ICommand BtnManageTeacherCommand { get; set; }
+        public ICommand BtnManageClassCommand { get; set; }
+        public ICommand BtnManageRoomCommand { get; set; }
+        public ICommand BtnManageMarkCommand { get; set; }
+        public ICommand BtnManageFeeCommand { get; set; }
+
+
 
         #endregion
 
@@ -45,7 +51,7 @@ namespace StudentManagement.ViewModel
             {
                 ChucNang = (int)CHUCNANG.DashBoard;
             });
-            BtnStudentCommand = new RelayCommand<object>((p) =>
+            BtnManageStudentCommand = new RelayCommand<object>((p) =>
             {
                 //if (AccountPower == 0 || AccountPower == 1)
                 //{
@@ -59,7 +65,79 @@ namespace StudentManagement.ViewModel
             {
                 ChucNang = (int)CHUCNANG.ManageStudent;
             });
+            BtnManageTeacherCommand = new RelayCommand<object>((p) =>
+            {
+                //if (AccountPower == 0 || AccountPower == 1)
+                //{
+                //    MessageBoxResult result = MessageBox.Show("Bạn không đủ quyền truy cập vào chức năng này!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
+                //    return false;
+                //}
+
+
+                return true;
+            }, (p) =>
+            {
+                ChucNang = (int)CHUCNANG.ManageTeacher;
+            });
+            BtnManageClassCommand = new RelayCommand<object>((p) =>
+            {
+                //if (AccountPower == 0 || AccountPower == 1)
+                //{
+                //    MessageBoxResult result = MessageBox.Show("Bạn không đủ quyền truy cập vào chức năng này!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
+                //    return false;
+                //}
+
+
+                return true;
+            }, (p) =>
+            {
+                ChucNang = (int)CHUCNANG.ManageClass;
+            });
+            BtnManageRoomCommand = new RelayCommand<object>((p) =>
+            {
+                //if (AccountPower == 0 || AccountPower == 1)
+                //{
+                //    MessageBoxResult result = MessageBox.Show("Bạn không đủ quyền truy cập vào chức năng này!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
+                //    return false;
+                //}
+
+
+                return true;
+            }, (p) =>
+            {
+                ChucNang = (int)CHUCNANG.ManageRoom;
+            });
+            BtnManageMarkCommand = new RelayCommand<object>((p) =>
+            {
+                //if (AccountPower == 0 || AccountPower == 1)
+                //{
+                //    MessageBoxResult result = MessageBox.Show("Bạn không đủ quyền truy cập vào chức năng này!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
+                //    return false;
+                //}
+
+
+                return true;
+            }, (p) =>
+            {
+                ChucNang = (int)CHUCNANG.ManageMark;
+            });
+            BtnManageFeeCommand = new RelayCommand<object>((p) =>
+            {
+                //if (AccountPower == 0 || AccountPower == 1)
+                //{
+                //    MessageBoxResult result = MessageBox.Show("Bạn không đủ quyền truy cập vào chức năng này!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
+                //    return false;
+                //}
+
+
+                return true;
+            }, (p) =>
+            {
+                ChucNang = (int)CHUCNANG.ManageFee;
+            });
+
             #endregion
+
             #region Handle Binding Command
             QuitCommand = new RelayCommand<MainWindow>((p) =>
             {

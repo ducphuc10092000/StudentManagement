@@ -1,4 +1,3 @@
-D:\StudentManagement\StudentManagement\obj\Debug\net5.0-windows\StudentManagement.csprojAssemblyReference.cache
 D:\StudentManagement\StudentManagement\obj\Debug\net5.0-windows\MainWindow.g.cs
 D:\StudentManagement\StudentManagement\obj\Debug\net5.0-windows\App.g.cs
 D:\StudentManagement\StudentManagement\obj\Debug\net5.0-windows\StudentManagement_MarkupCompile.cache
@@ -33,3 +32,15 @@ D:\StudentManagement\StudentManagement\obj\Debug\net5.0-windows\View\DashBoard\U
 D:\StudentManagement\StudentManagement\obj\Debug\net5.0-windows\View\Student_Manage\UC_Student_Manage.g.cs
 D:\StudentManagement\StudentManagement\obj\Debug\net5.0-windows\View\DashBoard\UC_DashBoard.baml
 D:\StudentManagement\StudentManagement\obj\Debug\net5.0-windows\View\Student_Manage\UC_Student_Manage.baml
+D:\StudentManagement\StudentManagement\obj\Debug\net5.0-windows\View\Class_Manage\UC_Class.g.cs
+D:\StudentManagement\StudentManagement\obj\Debug\net5.0-windows\View\Mark_Manage\UC_Mark.g.cs
+D:\StudentManagement\StudentManagement\obj\Debug\net5.0-windows\View\Room_Manage\UC_Room.g.cs
+D:\StudentManagement\StudentManagement\obj\Debug\net5.0-windows\View\Teacher_Manage\UC_Teacher.g.cs
+D:\StudentManagement\StudentManagement\obj\Debug\net5.0-windows\View\Tuition_Manage\UC_Tuition.g.cs
+D:\StudentManagement\StudentManagement\obj\Debug\net5.0-windows\View\Class_Manage\UC_Class.baml
+D:\StudentManagement\StudentManagement\obj\Debug\net5.0-windows\View\Mark_Manage\UC_Mark.baml
+D:\StudentManagement\StudentManagement\obj\Debug\net5.0-windows\View\Room_Manage\UC_Room.baml
+D:\StudentManagement\StudentManagement\obj\Debug\net5.0-windows\View\Teacher_Manage\UC_Teacher.baml
+D:\StudentManagement\StudentManagement\obj\Debug\net5.0-windows\View\Tuition_Manage\UC_Tuition.baml
+D:\StudentManagement\StudentManagement\bin\Debug\net5.0-windows\EntityFramework.dll
+D:\StudentManagement\StudentManagement\obj\Debug\net5.0-windows\StudentManagement.csproj.AssemblyReference.cache
